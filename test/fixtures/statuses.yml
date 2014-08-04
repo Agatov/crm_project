@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  landing_id: 1
+  name: MyString
+  color: MyString
+  is_service: false
+
+two:
+  landing_id: 1
+  name: MyString
+  color: MyString
+  is_service: false
