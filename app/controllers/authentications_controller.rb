@@ -1,15 +1,26 @@
 class AuthenticationsController < ApplicationController
+
+
+  skip_before_action :verify_authenticity_token, only: :create
+
+
   def index
-    @user = User.new
   end
 
   def create
     @user = User.find_by_email(params[:user][:email])
-    if @user.can_be_authorized? params[:user][:password]
-      sign_in @user
-      redirect_to leads_path
-    else
+
+
+
+    if  @user.nil?
       redirect_to :back
+    else
+      if @user.can_be_authorized? params[:user][:password]
+        sign_in @user
+        redirect_to clients_path
+      else
+        redirect_to :back
+      end
     end
   end
 

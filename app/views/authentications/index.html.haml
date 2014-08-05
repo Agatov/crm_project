@@ -1,0 +1,8 @@
+.authentication-form
+  .form-title Вход
+  %form{action: authentications_path, method: :post}
+    %input.large{type: :text, name: 'user[email]', placeholder: 'Введите ваш email'}
+    %input.large{type: :text, name: 'user[password]', placeholder: 'Введите ваш пароль'}
+
+    .form-bottom
+      %input.button.green{type: :submit, value: 'Войти'}
